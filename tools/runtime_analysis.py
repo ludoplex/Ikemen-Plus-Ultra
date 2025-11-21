@@ -9,6 +9,13 @@ This script analyzes the Ikemen Plus Ultra source code to extract:
 4. Corresponding function and variable declarations and templates
 
 Output: runtime_analysis.txt
+
+LIMITATIONS:
+- This is pattern-based static analysis, not a full C++ parser
+- Complex C++ features (templates, namespaces, operator overloads) may not be fully captured
+- Nested structures and methods within classes may have incomplete parsing
+- Field access levels (public/private/protected) are simplified to read/write
+- For most accurate analysis, supplement with runtime debugging tools
 """
 
 import os
@@ -16,6 +23,7 @@ import re
 from pathlib import Path
 from typing import List, Dict, Set, Tuple
 from collections import defaultdict
+from datetime import datetime
 
 
 class SourceAnalyzer:
@@ -34,10 +42,31 @@ class SourceAnalyzer:
         self.typedefs: List[Dict] = []
         self.global_vars: List[Dict] = []
         
+    def _extract_buffer_info(self, line: str, rel_path: Path, line_num: int, 
+                            operation_keywords: list, direction: str = 'send'):
+        """Helper to extract buffer information from socket operations."""
+        for keyword in operation_keywords:
+            if keyword in line:
+                # Pattern: operation(socket, buffer, size) or similar
+                buf_pattern = r'(?:send|Send|recv|Recv)\s*\([^,]+,\s*([^,\)]+)(?:,\s*([^,\)]+))?'
+                buf_match = re.search(buf_pattern, line)
+                if buf_match:
+                    buffer_name = buf_match.group(1).strip()
+                    size_expr = buf_match.group(2).strip() if buf_match.group(2) else "unknown"
+                    return {
+                        'file': str(rel_path),
+                        'line': line_num,
+                        'buffer': buffer_name,
+                        'size': size_expr,
+                        'context': line.strip(),
+                        'direction': direction
+                    }
+        return None
+    
     def analyze_cpp_file(self, file_path: Path):
         """Analyze a C++ source file for functions, structures, and network calls."""
         try:
-            with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+            with open(file_path, 'r', encoding='utf-8', errors='replace') as f:
                 content = f.read()
         except Exception as e:
             print(f"Error reading {file_path}: {e}")
@@ -54,7 +83,10 @@ class SourceAnalyzer:
             params = match.group(3).strip()
             
             # Skip common keywords that aren't function definitions
-            if return_type in ['if', 'while', 'for', 'switch', 'return']:
+            if return_type in ['if', 'while', 'for', 'switch', 'return', 'else', 
+                              'case', 'do', 'goto', 'try', 'catch', 'throw', 
+                              'const', 'static', 'extern', 'break', 'continue',
+                              'public', 'private', 'protected', 'virtual', 'override']:
                 continue
                 
             self.cpp_functions.append({
@@ -77,10 +109,12 @@ class SourceAnalyzer:
             for field_match in re.finditer(field_pattern, struct_body):
                 field_type = field_match.group(1).strip()
                 field_name = field_match.group(2).strip()
+                # Note: Access level detection is limited in this static analysis
+                # All fields are marked as 'read/write' by default
                 fields.append({
                     'type': field_type,
                     'name': field_name,
-                    'access': 'read/write'  # Assuming all fields are read/write
+                    'access': 'read/write'  # Simplified - actual access depends on context
                 })
             
             if fields:
@@ -110,47 +144,31 @@ class SourceAnalyzer:
                     })
                     
                     # Extract buffer information if this is a send operation
-                    if keyword in ['send', 'Send', 'socsend', 'SocketSend', 'SocketSendAry']:
-                        # Try to find the buffer variable and size
-                        # Pattern: send(socket, buffer, size) or similar
-                        buf_pattern = r'(?:send|Send)\s*\([^,]+,\s*([^,\)]+)(?:,\s*([^,\)]+))?'
-                        buf_match = re.search(buf_pattern, line)
-                        if buf_match:
-                            buffer_name = buf_match.group(1).strip()
-                            size_expr = buf_match.group(2).strip() if buf_match.group(2) else "unknown"
-                            self.socket_buffers.append({
-                                'file': str(rel_path),
-                                'line': i + 1,
-                                'buffer': buffer_name,
-                                'size': size_expr,
-                                'context': line.strip()
-                            })
+                    send_ops = ['send', 'Send', 'socsend', 'SocketSend', 'SocketSendAry']
+                    recv_ops = ['recv', 'Recv', 'socrecv', 'SocketRecv', 'SocketRecvAry']
                     
-                    # Also capture receive operations and their buffers
-                    if keyword in ['recv', 'Recv', 'socrecv', 'SocketRecv', 'SocketRecvAry']:
-                        buf_pattern = r'(?:recv|Recv)\s*\([^,]+,\s*([^,\)]+)(?:,\s*([^,\)]+))?'
-                        buf_match = re.search(buf_pattern, line)
-                        if buf_match:
-                            buffer_name = buf_match.group(1).strip()
-                            size_expr = buf_match.group(2).strip() if buf_match.group(2) else "unknown"
-                            self.socket_buffers.append({
-                                'file': str(rel_path),
-                                'line': i + 1,
-                                'buffer': buffer_name,
-                                'size': size_expr,
-                                'context': line.strip(),
-                                'direction': 'receive'
-                            })
+                    if keyword in send_ops:
+                        buf_info = self._extract_buffer_info(line, rel_path, i + 1, 
+                                                             send_ops, 'send')
+                        if buf_info:
+                            self.socket_buffers.append(buf_info)
+                    elif keyword in recv_ops:
+                        buf_info = self._extract_buffer_info(line, rel_path, i + 1, 
+                                                             recv_ops, 'receive')
+                        if buf_info:
+                            self.socket_buffers.append(buf_info)
                     break
         
         # Extract TUserFunc macro usages (SSZ plugin functions)
-        # Handle multi-line TUserFunc declarations
-        content_single_line = re.sub(r'\n\s*', ' ', content)
+        # Handle multi-line TUserFunc declarations more efficiently
+        # Use DOTALL flag instead of converting entire file to single line
         tuser_pattern = r'TUserFunc\s*\(\s*([^,]+?)\s*,\s*(\w+)\s*,\s*([^)]*?)\s*\)'
-        for match in re.finditer(tuser_pattern, content_single_line):
+        for match in re.finditer(tuser_pattern, content, re.DOTALL):
             return_type = match.group(1).strip()
             func_name = match.group(2).strip()
             params = match.group(3).strip()
+            # Normalize whitespace in parameters
+            params = ' '.join(params.split())
             
             self.cpp_functions.append({
                 'file': str(rel_path),
@@ -206,7 +224,7 @@ class SourceAnalyzer:
     def analyze_lua_file(self, file_path: Path):
         """Analyze a Lua script file for functions and network operations."""
         try:
-            with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+            with open(file_path, 'r', encoding='utf-8', errors='replace') as f:
                 content = f.read()
         except Exception as e:
             print(f"Error reading {file_path}: {e}")
@@ -271,7 +289,7 @@ class SourceAnalyzer:
             f.write("4. Function and variable declarations with templates\n")
             f.write("5. Type definitions and aliases\n\n")
             
-            f.write("Analysis Date: " + str(Path(__file__).stat().st_mtime) + "\n")
+            f.write(f"Analysis Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"Source Files Analyzed:\n")
             f.write(f"  - C++ files: {len(list(self.src_root.rglob('*.cpp')) + list(self.src_root.rglob('*.h')))}\n")
             f.write(f"  - Lua files: {len(list(self.script_root.rglob('*.lua')))}\n\n")

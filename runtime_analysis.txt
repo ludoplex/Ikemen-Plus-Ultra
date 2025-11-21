@@ -9,7 +9,7 @@ This report contains analysis of:
 4. Function and variable declarations with templates
 5. Type definitions and aliases
 
-Analysis Date: 1763759836.4559975
+Analysis Date: 2025-11-21 21:23:26
 Source Files Analyzed:
   - C++ files: 252
   - Lua files: 29
@@ -19,7 +19,7 @@ Source Files Analyzed:
 SECTION 1: C++ FUNCTION SIGNATURES (Runtime Arguments/Returns)
 ================================================================================
 
-Total C++ functions found: 20691
+Total C++ functions found: 20396
 
 
 --- src/d/lib/SDL2/SDL2_image/include/SDL_image.h ---
@@ -712,11 +712,6 @@ Function: SDL_ReportAssertion
                                                              const char *,
                                                              const char *, int)
 
-Function: blah
-  Return Type: else
-  Parameters: 
-  Signature: else blah()
-
 Function: SDL_ReportAssertion
   Return Type: in
   Parameters: 
@@ -726,11 +721,6 @@ Function: SDL_enabled_assert
   Return Type: define
   Parameters: condition
   Signature: define SDL_enabled_assert(condition)
-
-Function: if
-  Return Type: else
-  Parameters: sdl_assert_state == SDL_ASSERTION_BREAK
-  Signature: else if(sdl_assert_state == SDL_ASSERTION_BREAK)
 
 Function: SDL_assert
   Return Type: define
@@ -40824,21 +40814,6 @@ Function: __declspec
   Parameters: dllimport
   Signature: WINGDIAPI __declspec(dllimport)
 
-Function: __declspec
-  Return Type: extern
-  Parameters: dllexport
-  Signature: extern __declspec(dllexport)
-
-Function: __declspec
-  Return Type: extern
-  Parameters: dllimport
-  Signature: extern __declspec(dllimport)
-
-Function: __attribute__
-  Return Type: extern
-  Parameters: (visibility("default"
-  Signature: extern __attribute__((visibility("default")
-
 Function: defined
   Return Type: elif
   Parameters: __SUNPRO_C
@@ -69993,11 +69968,6 @@ Function: GLXEW_GET_VAR
   Parameters: __GLXEW_VERSION_1_3
   Signature: GLXEW_VERSION_1_3 GLXEW_GET_VAR(__GLXEW_VERSION_1_3)
 
-Function: void
-  Return Type: extern
-  Parameters: * glXGetProcAddress (const GLubyte *procName
-  Signature: extern void(* glXGetProcAddress (const GLubyte *procName)
-
 Function: GLXEW_GET_VAR
   Return Type: GLXEW_VERSION_1_4
   Parameters: __GLXEW_VERSION_1_4
@@ -70142,11 +70112,6 @@ Function: GLXEW_GET_VAR
   Return Type: GLXEW_ARB_framebuffer_sRGB
   Parameters: __GLXEW_ARB_framebuffer_sRGB
   Signature: GLXEW_ARB_framebuffer_sRGB GLXEW_GET_VAR(__GLXEW_ARB_framebuffer_sRGB)
-
-Function: void
-  Return Type: extern
-  Parameters: * glXGetProcAddressARB (const GLubyte *procName
-  Signature: extern void(* glXGetProcAddressARB (const GLubyte *procName)
 
 Function: GLXEW_GET_VAR
   Return Type: GLXEW_ARB_get_proc_address
@@ -71316,16 +71281,6 @@ Function: files
 ** "Materials"
   Signature: documentation files(the
 ** "Materials")
-
-Function: __declspec
-  Return Type: extern
-  Parameters: dllexport
-  Signature: extern __declspec(dllexport)
-
-Function: __declspec
-  Return Type: extern
-  Parameters: dllimport
-  Signature: extern __declspec(dllimport)
 
 Function: WGLEW_GET_VAR
   Return Type: WGLEW_3DFX_multisample
@@ -73049,13 +73004,6 @@ Function: int
   Parameters: *curl_debug_callback
   Signature: typedef int(*curl_debug_callback)
 
-Function: again
-  Return Type: try
-  Parameters: Added
-                                    in 7.18.2
-  Signature: try again(Added
-                                    in 7.18.2)
-
 Function: format
   Return Type: wrong
   Parameters: Added in 7.19.0
@@ -74463,11 +74411,6 @@ Function: select
   Return Type: to
   Parameters: 
   Signature: to select()
-
-Function: existing
-  Return Type: break
-  Parameters: wrongly written
-  Signature: break existing(wrongly written)
 
 Function: curl_multi_perform
   Return Type: call
@@ -79290,25 +79233,10 @@ Function: current
   Parameters: unfiltered
   Signature: save current(unfiltered)
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_access_version_number
-  Signature: extern PNG_EXPORT(png_uint_32,png_access_version_number)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_sig_bytes
-  Signature: extern PNG_EXPORT(void,png_set_sig_bytes)
-
 Function: fail
   Return Type: always
   Parameters: ie return non-zero
   Signature: always fail(ie return non-zero)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: int,png_sig_cmp
-  Signature: extern PNG_EXPORT(int,png_sig_cmp)
 
 Function: png_check_sig
   Return Type: calling
@@ -79317,265 +79245,30 @@ Function: png_check_sig
   Signature: calling
  * png_check_sig(sig, n)
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: int,png_check_sig
-  Signature: extern PNG_EXPORT(int,png_check_sig)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_structp,png_create_read_struct
-  Signature: extern PNG_EXPORT(png_structp,png_create_read_struct)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_structp,png_create_write_struct
-  Signature: extern PNG_EXPORT(png_structp,png_create_write_struct)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_compression_buffer_size
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_compression_buffer_size)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_compression_buffer_size
-  Signature: extern PNG_EXPORT(void,png_set_compression_buffer_size)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: int,png_reset_zstream
-  Signature: extern PNG_EXPORT(int,png_reset_zstream)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_structp,png_create_read_struct_2
-  Signature: extern PNG_EXPORT(png_structp,png_create_read_struct_2)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_structp,png_create_write_struct_2
-  Signature: extern PNG_EXPORT(png_structp,png_create_write_struct_2)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_write_chunk
-  Signature: extern PNG_EXPORT(void,png_write_chunk)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_write_chunk_start
-  Signature: extern PNG_EXPORT(void,png_write_chunk_start)
-
 Function: png_write_chunk_start
   Return Type: with
   Parameters: 
   Signature: with png_write_chunk_start()
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_write_chunk_data
-  Signature: extern PNG_EXPORT(void,png_write_chunk_data)
-
 Function: png_write_chunk_start
   Return Type: with
   Parameters: 
   Signature: with png_write_chunk_start()
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_write_chunk_end
-  Signature: extern PNG_EXPORT(void,png_write_chunk_end)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_infop,png_create_info_struct
-  Signature: extern PNG_EXPORT(png_infop,png_create_info_struct)
 
 Function: structure
   Return Type: info
   Parameters: old interface - DEPRECATED
   Signature: info structure(old interface - DEPRECATED)
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_info_init
-  Signature: extern PNG_EXPORT(void,png_info_init)
-
 Function: png_info_init
   Return Type: define
   Parameters: info_ptr
   Signature: define png_info_init(info_ptr)
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_info_init_3
-  Signature: extern PNG_EXPORT(void,png_info_init_3)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_write_info_before_PLTE
-  Signature: extern PNG_EXPORT(void,png_write_info_before_PLTE)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_write_info
-  Signature: extern PNG_EXPORT(void,png_write_info)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_read_info
-  Signature: extern PNG_EXPORT(void,png_read_info)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_charp,png_convert_to_rfc1123
-  Signature: extern PNG_EXPORT(png_charp,png_convert_to_rfc1123)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_convert_from_struct_tm
-  Signature: extern PNG_EXPORT(void,png_convert_from_struct_tm)
-
 Function: gmtime
   Return Type: Uses
   Parameters: 
   Signature: Uses gmtime()
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_convert_from_time_t
-  Signature: extern PNG_EXPORT(void,png_convert_from_time_t)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_expand
-  Signature: extern PNG_EXPORT(void,png_set_expand)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_expand_gray_1_2_4_to_8
-  Signature: extern PNG_EXPORT(void,png_set_expand_gray_1_2_4_to_8)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_palette_to_rgb
-  Signature: extern PNG_EXPORT(void,png_set_palette_to_rgb)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_tRNS_to_alpha
-  Signature: extern PNG_EXPORT(void,png_set_tRNS_to_alpha)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_gray_1_2_4_to_8
-  Signature: extern PNG_EXPORT(void,png_set_gray_1_2_4_to_8)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_bgr
-  Signature: extern PNG_EXPORT(void,png_set_bgr)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_gray_to_rgb
-  Signature: extern PNG_EXPORT(void,png_set_gray_to_rgb)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_rgb_to_gray
-  Signature: extern PNG_EXPORT(void,png_set_rgb_to_gray)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_rgb_to_gray_fixed
-  Signature: extern PNG_EXPORT(void,png_set_rgb_to_gray_fixed)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_byte,png_get_rgb_to_gray_status
-  Signature: extern PNG_EXPORT(png_byte,png_get_rgb_to_gray_status)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_build_grayscale_palette
-  Signature: extern PNG_EXPORT(void,png_build_grayscale_palette)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_strip_alpha
-  Signature: extern PNG_EXPORT(void,png_set_strip_alpha)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_swap_alpha
-  Signature: extern PNG_EXPORT(void,png_set_swap_alpha)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_invert_alpha
-  Signature: extern PNG_EXPORT(void,png_set_invert_alpha)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_filler
-  Signature: extern PNG_EXPORT(void,png_set_filler)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_add_alpha
-  Signature: extern PNG_EXPORT(void,png_set_add_alpha)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_swap
-  Signature: extern PNG_EXPORT(void,png_set_swap)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_packing
-  Signature: extern PNG_EXPORT(void,png_set_packing)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_packswap
-  Signature: extern PNG_EXPORT(void,png_set_packswap)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_shift
-  Signature: extern PNG_EXPORT(void,png_set_shift)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: int,png_set_interlace_handling
-  Signature: extern PNG_EXPORT(int,png_set_interlace_handling)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_invert_mono
-  Signature: extern PNG_EXPORT(void,png_set_invert_mono)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_background
-  Signature: extern PNG_EXPORT(void,png_set_background)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_strip_16
-  Signature: extern PNG_EXPORT(void,png_set_strip_16)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_dither
-  Signature: extern PNG_EXPORT(void,png_set_dither)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_gamma
-  Signature: extern PNG_EXPORT(void,png_set_gamma)
 
 Function: PLTE
   Return Type: empty
@@ -79586,81 +79279,6 @@ Function: png_permit_mng_features
   Return Type: Use
   Parameters: 
   Signature: Use png_permit_mng_features()
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_permit_empty_plte
-  Signature: extern PNG_EXPORT(void,png_permit_empty_plte)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_flush
-  Signature: extern PNG_EXPORT(void,png_set_flush)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_write_flush
-  Signature: extern PNG_EXPORT(void,png_write_flush)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_start_read_image
-  Signature: extern PNG_EXPORT(void,png_start_read_image)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_read_update_info
-  Signature: extern PNG_EXPORT(void,png_read_update_info)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_read_rows
-  Signature: extern PNG_EXPORT(void,png_read_rows)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_read_row
-  Signature: extern PNG_EXPORT(void,png_read_row)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_read_image
-  Signature: extern PNG_EXPORT(void,png_read_image)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_write_row
-  Signature: extern PNG_EXPORT(void,png_write_row)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_write_rows
-  Signature: extern PNG_EXPORT(void,png_write_rows)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_write_image
-  Signature: extern PNG_EXPORT(void,png_write_image)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_write_end
-  Signature: extern PNG_EXPORT(void,png_write_end)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_read_end
-  Signature: extern PNG_EXPORT(void,png_read_end)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_destroy_info_struct
-  Signature: extern PNG_EXPORT(void,png_destroy_info_struct)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_destroy_read_struct
-  Signature: extern PNG_EXPORT(void,png_destroy_read_struct)
 
 Function: read
   Return Type: the
@@ -79674,11 +79292,6 @@ Function: PNGARG
   Signature: png_read_destroy PNGARG((png_structp png_ptr, png_infop info_ptr,
    png_infop end_info_ptr)
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_destroy_write_struct
-  Signature: extern PNG_EXPORT(void,png_destroy_write_struct)
-
 Function: struct
   Return Type: png_ptr
   Parameters: old method - NOT DLL EXPORTED
@@ -79689,11 +79302,6 @@ Function: PNGARG
   Parameters: (png_structp png_ptr
   Signature: png_write_destroy PNGARG((png_structp png_ptr)
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_crc_action
-  Signature: extern PNG_EXPORT(void,png_set_crc_action)
-
 Function: file
   Return Type: header
   Parameters: zlib.h
@@ -79703,11 +79311,6 @@ Function: method
   Return Type: filtering
   Parameters: s
   Signature: filtering method(s)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_filter
-  Signature: extern PNG_EXPORT(void,png_set_filter)
 
 Function: PNG_ALL_FILTERS
   Return Type: define
@@ -79743,36 +79346,6 @@ Function: type
   Signature: filter
  * type(given by PNG_FILTER_VALUE_LAST)
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_filter_heuristics
-  Signature: extern PNG_EXPORT(void,png_set_filter_heuristics)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_compression_level
-  Signature: extern PNG_EXPORT(void,png_set_compression_level)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_compression_mem_level
-  Signature: extern PNG_EXPORT(void,png_set_compression_mem_level)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_compression_strategy
-  Signature: extern PNG_EXPORT(void,png_set_compression_strategy)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_compression_window_bits
-  Signature: extern PNG_EXPORT(void,png_set_compression_window_bits)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_compression_method
-  Signature: extern PNG_EXPORT(void,png_set_compression_method)
-
 Function: fread
   Return Type: as
   Parameters: 
@@ -79785,25 +79358,10 @@ Function: fprintf
   Signature: and
  * fprintf()
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_init_io
-  Signature: extern PNG_EXPORT(void,png_init_io)
-
 Function: the
   Return Type: Replace
   Parameters: error and abort
   Signature: Replace the(error and abort)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_error_fn
-  Signature: extern PNG_EXPORT(void,png_set_error_fn)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_voidp,png_get_error_ptr
-  Signature: extern PNG_EXPORT(png_voidp,png_get_error_ptr)
 
 Function: one
   Return Type: supplied
@@ -79815,90 +79373,10 @@ Function: ignored
   Parameters: and thus can be NULL
   Signature: be ignored(and thus can be NULL)
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_write_fn
-  Signature: extern PNG_EXPORT(void,png_set_write_fn)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_read_fn
-  Signature: extern PNG_EXPORT(void,png_set_read_fn)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_voidp,png_get_io_ptr
-  Signature: extern PNG_EXPORT(png_voidp,png_get_io_ptr)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_read_status_fn
-  Signature: extern PNG_EXPORT(void,png_set_read_status_fn)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_write_status_fn
-  Signature: extern PNG_EXPORT(void,png_set_write_status_fn)
-
 Function: one
   Return Type: supplied
   Parameters: s
   Signature: supplied one(s)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_mem_fn
-  Signature: extern PNG_EXPORT(void,png_set_mem_fn)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_voidp,png_get_mem_ptr
-  Signature: extern PNG_EXPORT(png_voidp,png_get_mem_ptr)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_read_user_transform_fn
-  Signature: extern PNG_EXPORT(void,png_set_read_user_transform_fn)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_write_user_transform_fn
-  Signature: extern PNG_EXPORT(void,png_set_write_user_transform_fn)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_user_transform_info
-  Signature: extern PNG_EXPORT(void,png_set_user_transform_info)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_voidp,png_get_user_transform_ptr
-  Signature: extern PNG_EXPORT(png_voidp,png_get_user_transform_ptr)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_read_user_chunk_fn
-  Signature: extern PNG_EXPORT(void,png_set_read_user_chunk_fn)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_voidp,png_get_user_chunk_ptr
-  Signature: extern PNG_EXPORT(png_voidp,png_get_user_chunk_ptr)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_progressive_read_fn
-  Signature: extern PNG_EXPORT(void,png_set_progressive_read_fn)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_voidp,png_get_progressive_ptr
-  Signature: extern PNG_EXPORT(png_voidp,png_get_progressive_ptr)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_process_data
-  Signature: extern PNG_EXPORT(void,png_process_data)
 
 Function: png_combine_row
   Return Type: the
@@ -79907,70 +79385,10 @@ Function: png_combine_row
   Signature: the
  * png_combine_row()
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_progressive_combine_row
-  Signature: extern PNG_EXPORT(void,png_progressive_combine_row)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_voidp,png_malloc
-  Signature: extern PNG_EXPORT(png_voidp,png_malloc)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_voidp,png_malloc_warn
-  Signature: extern PNG_EXPORT(png_voidp,png_malloc_warn)
-
 Function: png_malloc
   Return Type: by
   Parameters: 
   Signature: by png_malloc()
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_free
-  Signature: extern PNG_EXPORT(void,png_free)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: voidpf,png_zalloc
-  Signature: extern PNG_EXPORT(voidpf,png_zalloc)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_zfree
-  Signature: extern PNG_EXPORT(void,png_zfree)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_free_data
-  Signature: extern PNG_EXPORT(void,png_free_data)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_data_freer
-  Signature: extern PNG_EXPORT(void,png_data_freer)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_voidp,png_malloc_default
-  Signature: extern PNG_EXPORT(png_voidp,png_malloc_default)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_free_default
-  Signature: extern PNG_EXPORT(void,png_free_default)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_voidp,png_memcpy_check
-  Signature: extern PNG_EXPORT(png_voidp,png_memcpy_check)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_voidp,png_memset_check
-  Signature: extern PNG_EXPORT(png_voidp,png_memset_check)
 
 Function: PNGARG
   Return Type: png_far_to_near
@@ -79979,370 +79397,15 @@ Function: PNGARG
   Signature: png_far_to_near PNGARG((png_structp png_ptr,png_voidp ptr,
    int check)
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_error
-  Signature: extern PNG_EXPORT(void,png_error)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_chunk_error
-  Signature: extern PNG_EXPORT(void,png_chunk_error)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_err
-  Signature: extern PNG_EXPORT(void,png_err)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_warning
-  Signature: extern PNG_EXPORT(void,png_warning)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_chunk_warning
-  Signature: extern PNG_EXPORT(void,png_chunk_warning)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_valid
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_valid)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_rowbytes
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_rowbytes)
-
 Function: png_read_png
   Return Type: from
   Parameters: 
   Signature: from png_read_png()
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_bytepp,png_get_rows
-  Signature: extern PNG_EXPORT(png_bytepp,png_get_rows)
-
 Function: png_write_png
   Return Type: by
   Parameters: 
   Signature: by png_write_png()
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_rows
-  Signature: extern PNG_EXPORT(void,png_set_rows)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_byte,png_get_channels
-  Signature: extern PNG_EXPORT(png_byte,png_get_channels)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32, png_get_image_width
-  Signature: extern PNG_EXPORT(png_uint_32, png_get_image_width)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32, png_get_image_height
-  Signature: extern PNG_EXPORT(png_uint_32, png_get_image_height)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_byte, png_get_bit_depth
-  Signature: extern PNG_EXPORT(png_byte, png_get_bit_depth)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_byte, png_get_color_type
-  Signature: extern PNG_EXPORT(png_byte, png_get_color_type)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_byte, png_get_filter_type
-  Signature: extern PNG_EXPORT(png_byte, png_get_filter_type)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_byte, png_get_interlace_type
-  Signature: extern PNG_EXPORT(png_byte, png_get_interlace_type)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_byte, png_get_compression_type
-  Signature: extern PNG_EXPORT(png_byte, png_get_compression_type)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32, png_get_pixels_per_meter
-  Signature: extern PNG_EXPORT(png_uint_32, png_get_pixels_per_meter)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32, png_get_x_pixels_per_meter
-  Signature: extern PNG_EXPORT(png_uint_32, png_get_x_pixels_per_meter)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32, png_get_y_pixels_per_meter
-  Signature: extern PNG_EXPORT(png_uint_32, png_get_y_pixels_per_meter)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: float, png_get_pixel_aspect_ratio
-  Signature: extern PNG_EXPORT(float, png_get_pixel_aspect_ratio)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_int_32, png_get_x_offset_pixels
-  Signature: extern PNG_EXPORT(png_int_32, png_get_x_offset_pixels)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_int_32, png_get_y_offset_pixels
-  Signature: extern PNG_EXPORT(png_int_32, png_get_y_offset_pixels)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_int_32, png_get_x_offset_microns
-  Signature: extern PNG_EXPORT(png_int_32, png_get_x_offset_microns)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_int_32, png_get_y_offset_microns
-  Signature: extern PNG_EXPORT(png_int_32, png_get_y_offset_microns)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_bytep,png_get_signature
-  Signature: extern PNG_EXPORT(png_bytep,png_get_signature)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_bKGD
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_bKGD)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_bKGD
-  Signature: extern PNG_EXPORT(void,png_set_bKGD)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_cHRM
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_cHRM)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_cHRM_fixed
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_cHRM_fixed)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_cHRM
-  Signature: extern PNG_EXPORT(void,png_set_cHRM)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_cHRM_fixed
-  Signature: extern PNG_EXPORT(void,png_set_cHRM_fixed)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_gAMA
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_gAMA)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_gAMA_fixed
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_gAMA_fixed)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_gAMA
-  Signature: extern PNG_EXPORT(void,png_set_gAMA)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_gAMA_fixed
-  Signature: extern PNG_EXPORT(void,png_set_gAMA_fixed)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_hIST
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_hIST)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_hIST
-  Signature: extern PNG_EXPORT(void,png_set_hIST)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_IHDR
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_IHDR)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_IHDR
-  Signature: extern PNG_EXPORT(void,png_set_IHDR)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_oFFs
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_oFFs)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_oFFs
-  Signature: extern PNG_EXPORT(void,png_set_oFFs)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_pCAL
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_pCAL)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_pCAL
-  Signature: extern PNG_EXPORT(void,png_set_pCAL)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_pHYs
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_pHYs)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_pHYs
-  Signature: extern PNG_EXPORT(void,png_set_pHYs)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_PLTE
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_PLTE)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_PLTE
-  Signature: extern PNG_EXPORT(void,png_set_PLTE)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_sBIT
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_sBIT)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_sBIT
-  Signature: extern PNG_EXPORT(void,png_set_sBIT)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_sRGB
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_sRGB)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_sRGB
-  Signature: extern PNG_EXPORT(void,png_set_sRGB)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_sRGB_gAMA_and_cHRM
-  Signature: extern PNG_EXPORT(void,png_set_sRGB_gAMA_and_cHRM)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_iCCP
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_iCCP)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_iCCP
-  Signature: extern PNG_EXPORT(void,png_set_iCCP)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_sPLT
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_sPLT)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_sPLT
-  Signature: extern PNG_EXPORT(void,png_set_sPLT)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_text
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_text)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_text
-  Signature: extern PNG_EXPORT(void,png_set_text)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_tIME
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_tIME)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_tIME
-  Signature: extern PNG_EXPORT(void,png_set_tIME)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_tRNS
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_tRNS)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_tRNS
-  Signature: extern PNG_EXPORT(void,png_set_tRNS)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_sCAL
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_sCAL)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_sCAL_s
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_sCAL_s)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_sCAL
-  Signature: extern PNG_EXPORT(void,png_set_sCAL)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_sCAL_s
-  Signature: extern PNG_EXPORT(void,png_set_sCAL_s)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void, png_set_keep_unknown_chunks
-  Signature: extern PNG_EXPORT(void, png_set_keep_unknown_chunks)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void, png_set_unknown_chunks
-  Signature: extern PNG_EXPORT(void, png_set_unknown_chunks)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void, png_set_unknown_chunk_location
-  Signature: extern PNG_EXPORT(void, png_set_unknown_chunk_location)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_unknown_chunks
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_unknown_chunks)
 
 Function: PNG_EXPORT
   Return Type: PNG_HANDLE_AS_UNKNOWN_SUPPORTED
@@ -80353,21 +79416,6 @@ Function: png_set_invalid
   Return Type: use
   Parameters: png_ptr, info_ptr, PNG_INFO_CHNK
   Signature: use png_set_invalid(png_ptr, info_ptr, PNG_INFO_CHNK)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void, png_set_invalid
-  Signature: extern PNG_EXPORT(void, png_set_invalid)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void, png_read_png
-  Signature: extern PNG_EXPORT(void, png_read_png)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void, png_write_png
-  Signature: extern PNG_EXPORT(void, png_write_png)
 
 Function: png_debug
   Return Type: define
@@ -80429,31 +79477,6 @@ Function: png_debug2
   Parameters: l, m, p1, p2
   Signature: define png_debug2(l, m, p1, p2)
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_charp,png_get_copyright
-  Signature: extern PNG_EXPORT(png_charp,png_get_copyright)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_charp,png_get_header_ver
-  Signature: extern PNG_EXPORT(png_charp,png_get_header_ver)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_charp,png_get_header_version
-  Signature: extern PNG_EXPORT(png_charp,png_get_header_version)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_charp,png_get_libpng_ver
-  Signature: extern PNG_EXPORT(png_charp,png_get_libpng_ver)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_permit_mng_features
-  Signature: extern PNG_EXPORT(png_uint_32,png_permit_mng_features)
-
 Function: PNG_MMX_READ_FLAGS
   Return Type: define
   Parameters: PNG_ASM_FLAG_MMX_READ_COMBINE_ROW  \
@@ -80485,70 +79508,10 @@ Function: PNG_MMX_FLAGS
                       | PNG_MMX_READ_FLAGS                \
                       | PNG_MMX_WRITE_FLAGS)
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_mmx_flagmask
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_mmx_flagmask)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_asm_flagmask
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_asm_flagmask)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_asm_flags
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_asm_flags)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_byte,png_get_mmx_bitdepth_threshold
-  Signature: extern PNG_EXPORT(png_byte,png_get_mmx_bitdepth_threshold)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_mmx_rowbytes_threshold
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_mmx_rowbytes_threshold)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_asm_flags
-  Signature: extern PNG_EXPORT(void,png_set_asm_flags)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_mmx_thresholds
-  Signature: extern PNG_EXPORT(void,png_set_mmx_thresholds)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: int,png_mmx_support
-  Signature: extern PNG_EXPORT(int,png_mmx_support)
-
 Function: numbers
   Return Type: error
   Parameters: "#nnn "
   Signature: error numbers("#nnn ")
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_strip_error_numbers
-  Signature: extern PNG_EXPORT(void,png_set_strip_error_numbers)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_set_user_limits
-  Signature: extern PNG_EXPORT(void,png_set_user_limits)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_user_width_max
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_user_width_max)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_user_height_max
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_user_height_max)
 
 Function: shifts
   Return Type: two
@@ -80597,45 +79560,10 @@ Function: png_get_int_32
   Parameters: buf
   Signature: define png_get_int_32(buf)
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_uint_32
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_uint_32)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_16,png_get_uint_16
-  Signature: extern PNG_EXPORT(png_uint_16,png_get_uint_16)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_int_32,png_get_int_32
-  Signature: extern PNG_EXPORT(png_int_32,png_get_int_32)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: png_uint_32,png_get_uint_31
-  Signature: extern PNG_EXPORT(png_uint_32,png_get_uint_31)
-
 Function: order
   Return Type: byte
   Parameters: big-endian
   Signature: byte order(big-endian)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_save_uint_32
-  Signature: extern PNG_EXPORT(void,png_save_uint_32)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_save_int_32
-  Signature: extern PNG_EXPORT(void,png_save_int_32)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_save_uint_16
-  Signature: extern PNG_EXPORT(void,png_save_uint_16)
 
 Function: PNG_WEIGHT_FACTOR
   Return Type: define
@@ -80693,45 +79621,15 @@ Function: PNG_EXPORT_VAR
   Parameters: png_byte FARDATA
   Signature: PNG_USE_GLOBAL_ARRAYS PNG_EXPORT_VAR(png_byte FARDATA)
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_read_init
-  Signature: extern PNG_EXPORT(void,png_read_init)
-
 Function: png_read_init
   Return Type: define
   Parameters: png_ptr
   Signature: define png_read_init(png_ptr)
 
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_read_init_3
-  Signature: extern PNG_EXPORT(void,png_read_init_3)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_read_init_2
-  Signature: extern PNG_EXPORT(void,png_read_init_2)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_write_init
-  Signature: extern PNG_EXPORT(void,png_write_init)
-
 Function: png_write_init
   Return Type: define
   Parameters: png_ptr
   Signature: define png_write_init(png_ptr)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_write_init_3
-  Signature: extern PNG_EXPORT(void,png_write_init_3)
-
-Function: PNG_EXPORT
-  Return Type: extern
-  Parameters: void,png_write_init_2
-  Signature: extern PNG_EXPORT(void,png_write_init_2)
 
 Function: PNGARG
   Return Type: png_create_struct
@@ -82721,11 +81619,6 @@ Function: luaD_checkstack
   Parameters: L,n
   Signature: define luaD_checkstack(L,n)
 
-Function: condmovestack
-  Return Type: else
-  Parameters: L
-  Signature: else condmovestack(L)
-
 Function: incr_top
   Return Type: define
   Parameters: L
@@ -84345,11 +83238,6 @@ Function: Kst
   Return Type: then
   Parameters: INDEXK(x
   Signature: then Kst(INDEXK(x)
-
-Function: R
-  Return Type: else
-  Parameters: x
-  Signature: else R(x)
 
 Function: R
   Return Type: B
@@ -91216,11 +90104,6 @@ Function: BSEARCH
   Parameters: entries, count, elem, zetype, key, answer
   Signature: define BSEARCH(entries, count, elem, zetype, key, answer)
 
-Function: if
-  Return Type: else
-  Parameters: mid_val > key
-  Signature: else if(mid_val > key)
-
 Function: _ARRAY_ALLOC
   Return Type: define
   Parameters: array, newsize
@@ -91230,11 +90113,6 @@ Function: _ARRAY_GROW1
   Return Type: define
   Parameters: array
   Signature: define _ARRAY_GROW1(array)
-
-Function: if
-  Return Type: else
-  Parameters: (array
-  Signature: else if((array)
 
 Function: ARRAY_SIZE
   Return Type: define
@@ -92145,11 +91023,6 @@ Function: block_BytestreamPush
   Signature: void block_BytestreamPush(block_bytestream_t *p_bytestream,
                                          block_t *p_block)
 
-Function: if
-  Return Type: else
-  Parameters: !p_block->p_next
-  Signature: else if(!p_block->p_next)
-
 Function: block_SkipByte
   Return Type: int
   Parameters: block_bytestream_t *p_bytestream
@@ -92210,11 +91083,6 @@ Function: block_FindStartcodeFromOffset
     const uint8_t *p_startcode, int i_startcode_length
   Signature: int block_FindStartcodeFromOffset(block_bytestream_t *p_bytestream, size_t *pi_offset,
     const uint8_t *p_startcode, int i_startcode_length)
-
-Function: if
-  Return Type: else
-  Parameters: i_match
-  Signature: else if(i_match)
 
 
 --- src/d/lib/vlc/sdk/include/vlc/plugins/vlc_charset.h ---
@@ -92732,11 +91600,6 @@ Function: parity
   Parameters: unsigned x
   Signature: unsigned parity(unsigned x)
 
-Function: for
-  Return Type: else
-  Parameters: unsigned i = 4 * sizeof (x
-  Signature: else for(unsigned i = 4 * sizeof (x)
-
 Function: swap
   Return Type: Byte
   Parameters: 16 bits
@@ -92757,11 +91620,6 @@ Function: bswap32
   Parameters: uint32_t x
   Signature: uint32_t bswap32(uint32_t x)
 
-Function: return
-  Return Type: else
-  Parameters: (x & 0x000000FF
-  Signature: else return((x & 0x000000FF)
-
 Function: swap
   Return Type: Byte
   Parameters: 64 bits
@@ -92771,11 +91629,6 @@ Function: bswap64
   Return Type: uint64_t
   Parameters: uint64_t x
   Signature: uint64_t bswap64(uint64_t x)
-
-Function: return
-  Return Type: else
-  Parameters: (x & 0x00000000000000FFULL
-  Signature: else return((x & 0x00000000000000FFULL)
 
 Function: FREENULL
   Return Type: define
@@ -99797,11 +98650,6 @@ Function: spu_ChangeFilters
 
 --- src/d/lib/vlc/sdk/include/vlc/plugins/vlc_stream.h ---
 
-Function: path
-  Return Type: virtual
-  Parameters: it can only be changed during stream_t opening
-  Signature: virtual path(it can only be changed during stream_t opening)
-
 Function: stream_Control
   Return Type: to
   Parameters: 
@@ -100278,20 +99126,10 @@ Function: msleep
   Parameters: mtime_t delay
   Signature: void msleep(mtime_t delay)
 
-Function: __attribute__
-  Return Type: static
-  Parameters: (unused
-  Signature: static __attribute__((unused)
-
 Function: impossible_delay
   Return Type: mtime_t
   Parameters: mtime_t delay
   Signature: mtime_t impossible_delay(mtime_t delay)
-
-Function: __attribute__
-  Return Type: static
-  Parameters: (unused
-  Signature: static __attribute__((unused)
 
 Function: harmful_delay
   Return Type: mtime_t
@@ -100302,11 +99140,6 @@ Function: check_delay
   Return Type: define
   Parameters: d
   Signature: define check_delay(d)
-
-Function: __attribute__
-  Return Type: static
-  Parameters: (unused
-  Signature: static __attribute__((unused)
 
 Function: impossible_deadline
   Return Type: mtime_t
@@ -100460,11 +99293,6 @@ Function: vlc_poll
   Return Type: int
   Parameters: struct pollfd *fds, unsigned nfds, int timeout
   Signature: int vlc_poll(struct pollfd *fds, unsigned nfds, int timeout)
-
-Function: int
-  Return Type: static
-  Parameters: *vlc_poll_os2
-  Signature: static int(*vlc_poll_os2)
 
 Function: vlc_poll
   Return Type: int
@@ -101062,11 +99890,6 @@ Function: var_InheritFloat
   Parameters: o, n
   Signature: define var_InheritFloat(o, n)
 
-Function: if
-  Return Type: else
-  Parameters: val.psz_string && !*val.psz_string
-  Signature: else if(val.psz_string && !*val.psz_string)
-
 Function: var_InheritString
   Return Type: define
   Parameters: o, n
@@ -101284,11 +100107,6 @@ Function: vlm_media_Copy
   Return Type: __cplusplus
   Parameters: vlm_media_t *restrict p_dst, const vlm_media_t *restrict p_src
   Signature: __cplusplus vlm_media_Copy(vlm_media_t *restrict p_dst, const vlm_media_t *restrict p_src)
-
-Function: vlm_media_Copy
-  Return Type: else
-  Parameters: vlm_media_t *p_dst, const vlm_media_t *p_src
-  Signature: else vlm_media_Copy(vlm_media_t *p_dst, const vlm_media_t *p_src)
 
 Function: vlm_media_Delete
   Return Type: with
@@ -101769,11 +100587,6 @@ Function: libvlc_new
   Parameters: 
   Signature: to libvlc_new()
 
-Function: if
-  Return Type: else
-  Parameters: XInitThreads (
-  Signature: else if(XInitThreads ()
-
 
 --- src/d/lib/vlc/sdk/include/vlc/plugins/vlc_xml.h ---
 
@@ -102152,16 +100965,6 @@ Function: programming
   Signature: model programming(small or medium model with some far allocations)
 
 Function: __declspec
-  Return Type: extern
-  Parameters: dllexport
-  Signature: extern __declspec(dllexport)
-
-Function: __declspec
-  Return Type: extern
-  Parameters: dllimport
-  Signature: extern __declspec(dllimport)
-
-Function: __declspec
   Return Type: ZEXPORT
   Parameters: dllexport
   Signature: ZEXPORT __declspec(dllexport)
@@ -102290,16 +101093,6 @@ Function: programming
   Return Type: model
   Parameters: small or medium model with some far allocations
   Signature: model programming(small or medium model with some far allocations)
-
-Function: __declspec
-  Return Type: extern
-  Parameters: dllexport
-  Signature: extern __declspec(dllexport)
-
-Function: __declspec
-  Return Type: extern
-  Parameters: dllimport
-  Signature: extern __declspec(dllimport)
 
 Function: __declspec
   Return Type: ZEXPORT
@@ -102697,13 +101490,6 @@ Function: prematurely
   Parameters: some input or output was discarded
   Signature: freed prematurely(some input or output was discarded)
 
-Function: string
-  Return Type: static
-  Parameters: which must not be
-   deallocated
-  Signature: static string(which must not be
-   deallocated)
-
 Function: OF
   Return Type: inflateInit
   Parameters: (z_streamp strm
@@ -102859,11 +101645,6 @@ Function: OF
   Return Type: inflateEnd
   Parameters: (z_streamp strm
   Signature: inflateEnd OF((z_streamp strm)
-
-Function: string
-  Return Type: static
-  Parameters: which must not be deallocated
-  Signature: static string(which must not be deallocated)
 
 Function: OF
   Return Type: deflateInit2
@@ -104973,11 +103754,6 @@ Function: Align
   Parameters: Editing X Pos
   Signature: Set Align(Editing X Pos)
 
-Function: if
-  Return Type: else
-  Parameters: align == -1
-  Signature: else if(align == -1)
-
 Function: SDL_RenderCopy
   Return Type: Texture
   Parameters: g_renderer, texture, NULL, &dstRect
@@ -105068,30 +103844,15 @@ Function: A
   Parameters: Original State: Minimize & Close Box
   Signature: Bordered A(Original State: Minimize & Close Box)
 
-Function: if
-  Return Type: else
-  Parameters: state == 2
-  Signature: else if(state == 2)
-
 Function: B
   Return Type: Bordered
   Parameters: Only Show Close Box
   Signature: Bordered B(Only Show Close Box)
 
-Function: if
-  Return Type: else
-  Parameters: state == 3
-  Signature: else if(state == 3)
-
 Function: Decorations
   Return Type: Window
   Parameters: Remove decoration from actual window
   Signature: Window Decorations(Remove decoration from actual window)
-
-Function: if
-  Return Type: else
-  Parameters: state == 4
-  Signature: else if(state == 4)
 
 Function: SDL_RenderClear
   Return Type: size
@@ -105102,11 +103863,6 @@ Function: SDL_RenderSetLogicalSize
   Return Type: size
   Parameters: g_renderer, 0, 0
   Signature: size SDL_RenderSetLogicalSize(g_renderer, 0, 0)
-
-Function: if
-  Return Type: else
-  Parameters: w_opacity > 1.0
-  Signature: else if(w_opacity > 1.0)
 
 Function: if
   Return Type: Render
@@ -105268,11 +104024,6 @@ Function: HWND
   Parameters: Windows handle
   Signature: window HWND(Windows handle)
 
-Function: if
-  Return Type: else
-  Parameters: audioTrack == 0
-  Signature: else if(audioTrack == 0)
-
 Function: libVLC
   Return Type: Loading
   Parameters: Dynamic Loading
@@ -105333,20 +104084,10 @@ Function: normalize
   Parameters: double sam, const int chs, const int sps, NormalizeVar& v
   Signature: double normalize(double sam, const int chs, const int sps, NormalizeVar& v)
 
-Function: if
-  Return Type: else
-  Parameters: v.heri > 1.0
-  Signature: else if(v.heri > 1.0)
-
 Function: al
   Return Type: AutoLocker
   Parameters: &g_sndmtx
   Signature: AutoLocker al(&g_sndmtx)
-
-Function: if
-  Return Type: else
-  Parameters: in_mod->version == IN_VER_UNICODE
-  Signature: else if(in_mod->version == IN_VER_UNICODE)
 
 Function: if
   Return Type: Volume
@@ -105354,29 +104095,14 @@ Function: if
   Signature: Volume if(bgm_vol < 0)
 
 Function: if
-  Return Type: else
-  Parameters: bgm_vol > 1.0
-  Signature: else if(bgm_vol > 1.0)
-
-Function: if
   Return Type: Volume
   Parameters: wav_vol < 0.0
   Signature: Volume if(wav_vol < 0.0)
 
 Function: if
-  Return Type: else
-  Parameters: wav_vol > 1.0
-  Signature: else if(wav_vol > 1.0)
-
-Function: if
   Return Type: Volume
   Parameters: g_vol < 0.0
   Signature: Volume if(g_vol < 0.0)
-
-Function: if
-  Return Type: else
-  Parameters: g_vol > 1.0
-  Signature: else if(g_vol > 1.0)
 
 Function: kaiten
   Return Type: void
@@ -105437,11 +104163,6 @@ Function: skip
   Return Type: void
   Parameters: int n
   Signature: void skip(int n)
-
-Function: if
-  Return Type: else
-  Parameters: (datawidth-1
-  Signature: else if((datawidth-1)
 
 Function: nextLine
   Return Type: void
@@ -105519,16 +104240,6 @@ Function: mzLineBilt
 	float dcx, Img& pri, uint32_t* pspl, float cx, SDL_Rect& til,
 	float xscl, uint32_t colorkey)
 
-Function: if
-  Return Type: else
-  Parameters: til.w == 0
-  Signature: else if(til.w == 0)
-
-Function: if
-  Return Type: else
-  Parameters: til.w == 0
-  Signature: else if(til.w == 0)
-
 Function: getdxdy
   Return Type: void
   Parameters: int& dx, int& dy, const Zurashi* zt, uint8_t ztofs, uint32_t roto
@@ -105557,26 +104268,6 @@ Function: mzrLineBilt
 	int rx, int ry, int xlim, int ylim, float fx, Img& pri, uint32_t* pspl,
 	float xscl, uint32_t roto, bool biltflg, uint32_t colorkey)
 
-Function: if
-  Return Type: else
-  Parameters: roto < 512
-  Signature: else if(roto < 512)
-
-Function: if
-  Return Type: else
-  Parameters: roto < 768
-  Signature: else if(roto < 768)
-
-Function: if
-  Return Type: else
-  Parameters: roto < 512
-  Signature: else if(roto < 512)
-
-Function: if
-  Return Type: else
-  Parameters: roto < 768
-  Signature: else if(roto < 768)
-
 Function: mzScreenBilt
   Return Type: void
   Parameters: typename Funcs<Img>::mzllporc loop, SDL_Rect& dr,
@@ -105587,16 +104278,6 @@ Function: mzScreenBilt
 	float rcx, Img pri, uint32_t *ppal, SDL_Rect& srcr, float cx, float ty,
 	SDL_Rect& tile, float xtopscl, float xbotscl, float yscl,
 	float rasterxadd, uint32_t colorkey)
-
-Function: if
-  Return Type: else
-  Parameters: tile.h == 1 || (uint32_t
-  Signature: else if(tile.h == 1 || (uint32_t)
-
-Function: if
-  Return Type: else
-  Parameters: tile.h == 1 || (uint32_t
-  Signature: else if(tile.h == 1 || (uint32_t)
 
 Function: mzrScreenBilt
   Return Type: void
@@ -105624,31 +104305,6 @@ Function: foobar
   Return Type: int
   Parameters: int n
   Signature: int foobar(int n)
-
-Function: if
-  Return Type: else
-  Parameters: (alpha&0x3fc00
-  Signature: else if((alpha&0x3fc00)
-
-Function: if
-  Return Type: else
-  Parameters: alpha == -2
-  Signature: else if(alpha == -2)
-
-Function: if
-  Return Type: else
-  Parameters: alpha <= 0
-  Signature: else if(alpha <= 0)
-
-Function: if
-  Return Type: else
-  Parameters: alpha < 255
-  Signature: else if(alpha < 255)
-
-Function: if
-  Return Type: else
-  Parameters: alpha < 512
-  Signature: else if(alpha < 512)
 
 Function: mzlShadowLoop
   Return Type: void
@@ -105690,26 +104346,6 @@ Function: mzrShadowLineBilt
   Signature: void mzrShadowLineBilt(typename Funcs<Img>::mrlslporc loop, uint32_t* pdpx, int dstw,
 	int rx, int ry, int xlim, int ylim, float fx, Img& pri, uint32_t color,
 	float xscl, float vscl, uint32_t roto, bool biltflg, uint32_t alpha)
-
-Function: if
-  Return Type: else
-  Parameters: roto < 512
-  Signature: else if(roto < 512)
-
-Function: if
-  Return Type: else
-  Parameters: roto < 768
-  Signature: else if(roto < 768)
-
-Function: if
-  Return Type: else
-  Parameters: roto < 512
-  Signature: else if(roto < 512)
-
-Function: if
-  Return Type: else
-  Parameters: roto < 768
-  Signature: else if(roto < 768)
 
 Function: mzShadowScreenBilt
   Return Type: void
@@ -105803,50 +104439,10 @@ Function: renderMugenGl
 	float vscl, float yscl, float xbotscl, float xtopscl, const SDL_Rect& tl,
 	float y, float x, const SDL_Rect& r, GLhandleARB shader)
 
-Function: if
-  Return Type: else
-  Parameters: alpha == -2
-  Signature: else if(alpha == -2)
-
-Function: if
-  Return Type: else
-  Parameters: alpha <= 0
-  Signature: else if(alpha <= 0)
-
-Function: if
-  Return Type: else
-  Parameters: alpha < 255
-  Signature: else if(alpha < 255)
-
-Function: if
-  Return Type: else
-  Parameters: alpha < 512
-  Signature: else if(alpha < 512)
-
 Function: rectFillGl
   Return Type: void
   Parameters: float r, float g, float b, float a, SDL_Rect rect
   Signature: void rectFillGl(float r, float g, float b, float a, SDL_Rect rect)
-
-Function: if
-  Return Type: else
-  Parameters: alpha == -2
-  Signature: else if(alpha == -2)
-
-Function: if
-  Return Type: else
-  Parameters: alpha <= 0
-  Signature: else if(alpha <= 0)
-
-Function: if
-  Return Type: else
-  Parameters: alpha < 255
-  Signature: else if(alpha < 255)
-
-Function: if
-  Return Type: else
-  Parameters: alpha < 512
-  Signature: else if(alpha < 512)
 
 Function: DrawTTF
   Return Type: void
@@ -106121,22 +104717,10 @@ Function: MugenFillGl
 
 --- src/lib/dll/alert/alert/alert.cpp ---
 
-Function: void
-  Return Type: static
-  Parameters: __stdcall *sszrefdeletefunc
-  Signature: static void(__stdcall *sszrefdeletefunc)
-
 Function: MessageBox
   Return Type: _WIN32
   Parameters: NULL, pu->refToWstr(mes
   Signature: _WIN32 MessageBox(NULL, pu->refToWstr(mes)
-
-Function: fprintf
-  Return Type: else
-  Parameters: stderr, "%s\n%s\n",
-		pu->wToA(pu->refToWstr(title
-  Signature: else fprintf(stderr, "%s\n%s\n",
-		pu->wToA(pu->refToWstr(title)
 
 Function: Alert
   Return Type: void
@@ -106146,11 +104730,6 @@ Function: Alert
 
 
 --- src/lib/dll/file/file/file.cpp ---
-
-Function: void
-  Return Type: static
-  Parameters: __stdcall *sszrefdeletefunc
-  Signature: static void(__stdcall *sszrefdeletefunc)
 
 Function: _wfopen_s
   Return Type: errno_t
@@ -106310,11 +104889,6 @@ Function: GetCurrentDir
 
 --- src/lib/dll/math/math/math.cpp ---
 
-Function: void
-  Return Type: static
-  Parameters: __stdcall *sszrefdeletefunc
-  Signature: static void(__stdcall *sszrefdeletefunc)
-
 Function: Sin
   Return Type: double
   Parameters: double x
@@ -106408,11 +104982,6 @@ Function: IsNaN
 
 --- src/lib/dll/regex/regex/regex.cpp ---
 
-Function: void
-  Return Type: static
-  Parameters: __stdcall *sszrefdeletefunc
-  Signature: static void(__stdcall *sszrefdeletefunc)
-
 Function: if
   Return Type: endif
   Parameters: !found
@@ -106473,11 +105042,6 @@ Function: WTOA
   Return Type: define
   Parameters: s
   Signature: define WTOA(s)
-
-Function: void
-  Return Type: static
-  Parameters: __stdcall *sszrefdeletefunc
-  Signature: static void(__stdcall *sszrefdeletefunc)
 
 Function: DllMain
   Return Type: WINAPI
@@ -106648,11 +105212,6 @@ Function: SSZCallBack
 	intptr_t hikisize, intptr_t retsize
   Signature: SSZ_STDCALL SSZCallBack(void* pcbs, intptr_t calladr, void* phikisuu,
 	intptr_t hikisize, intptr_t retsize)
-
-Function: void
-  Return Type: static
-  Parameters: SSZ_STDCALL* const sszrefdeletefunc
-  Signature: static void(SSZ_STDCALL* const sszrefdeletefunc)
 
 Function: LoadLibrary
   Return Type: HMODULE
@@ -106909,11 +105468,6 @@ Function: SSZCallBack
 	intptr_t hikisize, intptr_t retsize
   Signature: SSZ_STDCALL SSZCallBack(void* pcbs, intptr_t calladr, void* phikisuu,
 	intptr_t hikisize, intptr_t retsize)
-
-Function: void
-  Return Type: static
-  Parameters: SSZ_STDCALL* const sszrefdeletefunc
-  Signature: static void(SSZ_STDCALL* const sszrefdeletefunc)
 
 Function: LoadLibrary
   Return Type: HMODULE
@@ -107339,16 +105893,6 @@ Function: FuncToken
   Parameters: std::basic_string<intptr_t>& type, const intptr_t* const iap, intptr_t& i
   Signature: bool FuncToken(std::basic_string<intptr_t>& type, const intptr_t* const iap, intptr_t& i)
 
-Function: if
-  Return Type: else
-  Parameters: iap[i-1] == METHOD_TOKEN
-  Signature: else if(iap[i-1] == METHOD_TOKEN)
-
-Function: if
-  Return Type: else
-  Parameters: iap[i-1] == AND_TOKEN || iap[i-1] == OR_TOKEN
-  Signature: else if(iap[i-1] == AND_TOKEN || iap[i-1] == OR_TOKEN)
-
 Function: FuncTypeCheck
   Return Type: bool
   Parameters: intptr_t f1l, const intptr_t* const f1, const intptr_t* const f2
@@ -107358,16 +105902,6 @@ Function: kakeruRemove
   Return Type: void
   Parameters: std::basic_string<intptr_t>& type
   Signature: void kakeruRemove(std::basic_string<intptr_t>& type)
-
-Function: if
-  Return Type: else
-  Parameters: *it == WARU_TOKEN
-  Signature: else if(*it == WARU_TOKEN)
-
-Function: if
-  Return Type: else
-  Parameters: *it == WARU_TOKEN
-  Signature: else if(*it == WARU_TOKEN)
 
 Function: TokenToTypeId
   Return Type: int32_t
@@ -107382,11 +105916,6 @@ Function: TokentToStr
 
 --- src/lib/dll/thread/thread/thread.cpp ---
 
-Function: void
-  Return Type: static
-  Parameters: __stdcall *sszrefdeletefunc
-  Signature: static void(__stdcall *sszrefdeletefunc)
-
 Function: Delay
   Return Type: void
   Parameters: uint32_t ui
@@ -107400,11 +105929,6 @@ Function: comment
   Return Type: pragma
   Parameters: lib,"winmm.lib"
   Signature: pragma comment(lib,"winmm.lib")
-
-Function: void
-  Return Type: static
-  Parameters: __stdcall *sszrefdeletefunc
-  Signature: static void(__stdcall *sszrefdeletefunc)
 
 
 --- src/ssize (executable)/ssize/main.cpp ---
@@ -107438,11 +105962,6 @@ Function: WinMain
   Return Type: WINAPI
   Parameters: HINSTANCE hInstance,HINSTANCE hPrevInstance, PSTR szCmdLine,int iCmdShow
   Signature: WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance, PSTR szCmdLine,int iCmdShow)
-
-Function: main
-  Return Type: else
-  Parameters: int argc, char *argv[]
-  Signature: else main(int argc, char *argv[])
 
 Function: pu
   Return Type: PluginUtil
@@ -112119,11 +110638,13 @@ Total socket buffers found: 12
 Buffer: p
   File: src/lib/dll/socket/socket/socket.cpp, Line: 105
   Size: size
+  Direction: send
   Context: return socsend(*psoc, p, size) == size;
 
 Buffer: (char*
   File: src/lib/dll/socket/socket/socket.cpp, Line: 111
   Size: unknown
+  Direction: send
   Context: return socsend(*psoc, (char*)ary.atpos(), ary.len()) / size;
 
 Buffer: p
@@ -112147,31 +110668,37 @@ Buffer: void *buffer
 Buffer: const void *buffer
   File: src/d/lib/libcurl/include/curl/easy.h, Line: 106
   Size: unknown
+  Direction: send
   Context: CURL_EXTERN CURLcode curl_easy_send(CURL *curl, const void *buffer,
 
 Buffer: id
   File: src/d/lib/vlc/sdk/include/vlc/plugins/vlc_es_out.h, Line: 121
   Size: p_block
+  Direction: send
   Context: return out->pf_send( out, id, p_block );
 
 Buffer: id
   File: src/d/lib/vlc/sdk/include/vlc/plugins/vlc_sout.h, Line: 212
   Size: b
+  Direction: send
   Context: return s->pf_send( s, id, b );
 
 Buffer: &event
   File: src/d/lib/vlc/sdk/include/vlc/plugins/vlc_events.h, Line: 91
   Size: unknown
+  Direction: send
   Context: *        vlc_event_send( &p_self->p_event_manager, &event );
 
 Buffer: vlc_event_t *
   File: src/d/lib/vlc/sdk/include/vlc/plugins/vlc_events.h, Line: 245
   Size: unknown
+  Direction: send
   Context: VLC_API void vlc_event_send( vlc_event_manager_t * p_em, vlc_event_t * );
 
 Buffer: b
   File: src/d/lib/vlc/sdk/include/vlc/plugins/vlc_tls.h, Line: 55
   Size: c
+  Direction: send
   Context: # define tls_Send( a, b, c ) (((vlc_tls_t *)a)->sock.pf_send (a, b, c))
 
 Buffer: b
@@ -119471,7 +117998,7 @@ BOOL b
 SUMMARY STATISTICS
 ================================================================================
 
-C++ Functions: 20691
+C++ Functions: 20396
 Lua Functions: 796
 Structures/Objects: 263
 Type Definitions: 1014
